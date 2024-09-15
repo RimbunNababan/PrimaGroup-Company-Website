@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siteplan Citra Mutiara</title>
+    <link rel="icon" href="primagrup.png" type="image/png">
+    <style>
+        /* Memusatkan teks pada h2 */
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            margin: 20px;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0; /* Posisikan container di kiri layar */
+            width: auto;
+            height: auto;
+        }
+        .lines-container {
+            position: absolute;
+            top: 0;
+            left: -200px; /* Pastikan garis berada di kiri layar */
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .lines-container svg {
+            position: absolute;
+        }
+        .svg-container {
+            position: absolute;
+            top: 0;
+            left: -200px; /* Pastikan svg container berada di kiri layar */
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+        .svg-container text {
+            pointer-events: none;
+            user-select: none;
+        }
+        h2 {
+            text-align: center;
+            pointer-events: none;
+            z-index: 1;
+            position: relative;
+            user-select: none;
+        }
+          /* Styles for the pop-up */
+       .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 300px;
+            width: 100%;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .popup-header {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .popup-close {
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+        .popup-close:hover {
+            color: #000;
+        }
+        .house{
+            cursor: pointer;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        /* Animasi untuk Pop-up */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -45%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .popup-content p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Siteplan Perumahan Citra Mutiara</h2>
+        <div class="lines-container">
+            <!--Garis Vertikal-->
+            <svg width="100" height="500" class="diagonal-line" style="top: 85px; left: 475px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="120" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 87px; left: 495px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="207" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 96px; left: 555px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="160" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 100px; left: 615px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="155" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 100px; left: 685px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="155.5" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 204px; left: 445px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="355.5" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="700" class="diagonal-line" style="top: 535px; left: 569px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="570.5" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="200" class="diagonal-line" style="top: 1080px; left: 958px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="58.5" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 708px; left: 443px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="190" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 718px; left: 467px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="20" y2="180" stroke="black" stroke-width="2" />
+            </svg>
+            <!--Garis Diagonal-->
+            <!-- SVG line berada di atas gambar -->
+            <svg width="200" height="300" style="top: 20px; left: 380px;">
+                <line x1="0" y1="67" x2="115" y2="90" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 10px; left: 380px;">
+                <line x1="0" y1="64" x2="135" y2="89" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 30px; left: 515.5px;">
+                <line x1="0" y1="69" x2="118" y2="80" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="300" height="300" style="top: 35px; left: 632px;">
+                <line x1="0" y1="75" x2="183" y2="74" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 180px; left: 449.5px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="46" y1="24" x2="20" y2="46" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 205px; left: 417px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="53" y1="21" x2="18" y2="40" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 220px; left: 415px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="10" y2="180.5" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 360px; left: 408px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="56" y1="52" x2="18" y2="40" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="500" class="diagonal-line" style="top: 748px; left: 1165px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="170" y1="25" x2="10" y2="351.5" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 713px; left: 1317px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="30" y1="0" x2="18" y2="60" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="500" class="diagonal-line" style="top: 485px; left: 1229px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="0" x2="118" y2="228" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="250" height="500" class="diagonal-line" style="top: 228px; left: 1035px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="0" y1="0" x2="213" y2="257" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="250" height="500" class="diagonal-line" style="top: 174px; left: 936px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="80" y1="0" x2="100" y2="55" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 123px; left: 1015px;">
+                <line x1="0" y1="50" x2="60" y2="39" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="400" height="500" class="diagonal-line" style="top: 162px; left: 995px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="80" y1="0" x2="330" y2="295" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="500" class="diagonal-line" style="top: 455px; left: 1305px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="0" x2="118" y2="245" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 700px; left: 1393px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="30" y1="0" x2="5" y2="110" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="500" class="diagonal-line" style="top: 784px; left: 1228px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="170" y1="25" x2="25" y2="347" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="250" height="500" class="diagonal-line" style="top: 54px; left: 1007px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="90" y1="0" x2="100" y2="15" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="250" height="500" class="diagonal-line" style="top: 68px; left: 1056.2px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="50" y1="0" x2="120" y2="60" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="400" height="500" class="diagonal-line" style="top: 127px; left: 1096px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="80" y1="0" x2="150" y2="95" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="400" height="500" class="diagonal-line" style="top: 222px; left: 1165.5px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="80" y1="0" x2="280" y2="230" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="200" height="500" class="diagonal-line" style="top: 451px; left: 1425px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="0" x2="78" y2="125" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 576px; left: 1473px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="30" y1="0" x2="40" y2="160" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="200" height="500" class="diagonal-line" style="top: 710px; left: 1342px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="170" y1="25" x2="5" y2="407" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="100" height="700" class="diagonal-line" style="top: 1091px; left: 1327px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="10" y2="130" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="400" height="500" class="diagonal-line" style="top: 52px; left: 1125.5px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="80" y1="0" x2="230" y2="160" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="400" height="500" class="diagonal-line" style="top: 210px; left: 1273.5px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="80" y1="0" x2="280" y2="250" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="400" height="500" class="diagonal-line" style="top: 459px; left: 1473.5px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="80" y1="0" x2="140" y2="220" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 679px; left: 1583px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="30" y1="0" x2="55" y2="35" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 713px; left: 1609px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="30" y1="0" x2="8" y2="160" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 871px; left: 1587px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="30" y1="0" x2="3" y2="50" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="200" height="500" class="diagonal-line" style="top: 896px; left: 1551px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="40" y1="25" x2="0" y2="50" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 946px; left: 1452px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="100" y1="0" x2="1" y2="180" stroke="blue" stroke-width="2" />
+            </svg>
+            <svg width="100" height="500" class="diagonal-line" style="top: 1100px; left: 1433px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="20" y1="25" x2="2" y2="145" stroke="blue" stroke-width="2" />
+            </svg>
+             <!-- Garis Horizontal -->
+             <svg width="800" height="100" class="horizontal-line" style="top: 205px; left: 514px;">
+                <line x1="0" y1="50" x2="190" y2="50" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 43px; left: 514px;">
+                <line x1="0" y1="69" x2="62" y2="77" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 48px; left: 575px;">
+                <line x1="0" y1="72" x2="61" y2="78" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 48px; left: 635px;">
+                <line x1="0" y1="78" x2="180.5" y2="76" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="500" height="300" style="top: 173px; left: 705px;">
+                <line x1="0" y1="75" x2="445" y2="75" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 245px; left: 514px;">
+                <line x1="0" y1="50" x2="221" y2="51" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 510px; left: 464px;">
+                <line x1="0" y1="50" x2="125" y2="51" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 1055px; left: 589px;">
+                <line x1="0" y1="50" x2="130" y2="47" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 1052px; left: 718px;">
+                <line x1="0" y1="50" x2="150" y2="56" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 1058px; left: 868px;">
+                <line x1="0" y1="50" x2="110" y2="80" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 1055px; left: 977.5px;">
+                <line x1="0" y1="50" x2="155" y2="30" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 1035px; left: 1132.5px;">
+                <line x1="0" y1="50" x2="120" y2="95" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 660px; left: 488px;">
+                <line x1="0" y1="50" x2="100" y2="47" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 670px; left: 469px;">
+                <line x1="0" y1="50" x2="20" y2="40" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 684px; left: 462px;">
+                <line x1="0" y1="50" x2="7" y2="35" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 680px; left: 510px;">
+                <line x1="0" y1="48" x2="80" y2="48" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="800" height="100" class="horizontal-line" style="top: 693px; left: 486px;">
+                <line x1="0" y1="50" x2="25" y2="35" stroke="black" stroke-width="2"/>
+            </svg>
+        </div>
+            <div class="svg-container">
+            <svg width="2000" height="1000" style="margin-top: 248px;">
+            <!-- Blok Rumah Kosong -->
+                
+                <rect x="736" y="0" class="house" data-blok="A-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="750" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-09</text>
+
+
+                <rect x="764" y="0" class="house" data-blok="A-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="778" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-11</text>
+
+
+                <rect x="792" y="0" class="house" data-blok="A-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="806" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-12A</text>
+
+
+                <rect x="820" y="0" class="house" data-blok="A-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="834" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-15</text>
+
+
+                <rect x="848" y="0" class="house" data-blok="A-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="862" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-17</text>
+
+
+                <rect x="876" y="0" class="house" data-blok="A-19" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="890" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-19</text>
+
+
+                <rect x="904" y="0" class="house" data-blok="A-21" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="918" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-21</text>
+
+
+                <rect x="932" y="0" class="house" data-blok="A-23" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="946" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-23</text>
+
+
+                <rect x="960" y="0" class="house" data-blok="A-25" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="974" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-25</text>
+
+
+                <rect x="988" y="0" class="house" data-blok="A-27" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="1002" y="28" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-27</text>
+
+                 <!-- Blok Rumah Kosong -->
+                <rect x="505" y="100" class="house" data-blok="A-01" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="519" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-01</text>
+
+                <rect x="533" y="100" class="house" data-blok="A-02" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="547" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-02</text>
+
+                <rect x="561" y="100" class="house" data-blok="A-03" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="575" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-03</text>
+
+                <rect x="589" y="100" class="house" data-blok="A-04" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="603" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-04</text>
+
+                <rect x="505" y="152" class="house" data-blok="B-01" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="519" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-01</text>
+
+                <rect x="533" y="152" class="house" data-blok="B-03" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="547" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-03</text>
+
+                <rect x="561" y="152" class="house" data-blok="B-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="575" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-05</text>
+
+                <rect x="589" y="152" class="house" data-blok="B-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="603" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-07</text>
+
+
+                 <!-- Blok Rumah Kosong -->
+                <rect x="622" y="100" class="house" data-blok="A-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="636" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-05</text>
+
+                <rect x="650" y="100" class="house" data-blok="A-06" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="664" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-06</text>
+
+                <rect x="678" y="100" class="house" data-blok="A-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="692" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-07</text>
+
+                <rect x="706" y="100" class="house" data-blok="A-08" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="720" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-08</text>
+
+                <rect x="734" y="100" class="house" data-blok="A-10" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="748" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-10</text>
+
+                <rect x="762" y="100" class="house" data-blok="A-12" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="776" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-12</text>
+
+                <rect x="790" y="100" class="house" data-blok="A-14" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="804" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-14</text>
+
+                <rect x="818" y="100" class="house" data-blok="A-16" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="832" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-16</text>
+
+                <rect x="846" y="100" class="house" data-blok="A-18" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                <text x="860" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-18</text>
+
+                 <rect x="622" y="152" class="house" data-blok="B-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="636" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-09</text>
+ 
+                 <rect x="650" y="152" class="house" data-blok="B-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="664" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-11</text>
+ 
+                 <rect x="678" y="152" class="house" data-blok="B-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="692" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-12A</text>
+ 
+                 <rect x="706" y="152" class="house" data-blok="B-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="720" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-15</text>
+ 
+                 <rect x="734" y="152" class="house" data-blok="B-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="748" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-17</text>
+ 
+                 <rect x="762" y="152" class="house" data-blok="B-19" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="776" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-19</text>
+ 
+                 <rect x="790" y="152" class="house" data-blok="B-21" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="804" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-21</text>
+ 
+                 <rect x="818" y="152" class="house" data-blok="B-23" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="832" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-23</text>
+ 
+                 <rect x="846" y="152" class="house" data-blok="B-25" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+                 <text x="860" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-25</text>
+
+ <!-- Blok Rumah Kosong -->
+ <rect x="902" y="100" class="house" data-blok="A-20" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="916" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-20</text>
+
+ <rect x="930" y="100" class="house" data-blok="A-22" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="944" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-22</text>
+
+ <rect x="958" y="100" class="house" data-blok="A-24" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="972" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-24</text>
+
+ <rect x="986" y="100" class="house" data-blok="A-26" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1000" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-26</text>
+
+ <rect x="1014" y="100" class="house" data-blok="A-28" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1028" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-28</text>
+
+ <rect x="1042" y="100" class="house" data-blok="A-29" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1056" y="128" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">A-29</text>
+
+ <rect x="902" y="152" class="house" data-blok="C-01" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="916" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-01</text>
+
+ <rect x="930" y="152" class="house" data-blok="C-03" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="944" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-03</text>
+
+ <rect x="958" y="152" class="house" data-blok="C-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="972" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-05</text>
+
+ <rect x="986" y="152" class="house" data-blok="C-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1000" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-07</text>
+
+ <rect x="1014" y="152" class="house" data-blok="C-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1028" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-09</text>
+
+ <rect x="1042" y="152" class="house" data-blok="C-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1056" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-11</text>
+
+ <rect x="1075" y="152" class="house" data-blok="C-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1089" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-12A</text>
+
+ <rect x="1103" y="152" class="house" data-blok="C-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1117" y="180" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-15</text>
+
+ <!-- Blok Rumah Kosong -->
+    <rect x="482" y="234" class="house" data-blok="B-02" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="496" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-02</text>
+
+    <rect x="510" y="234" class="house" data-blok="B-04" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="524" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-04</text>
+
+    <rect x="538" y="234" class="house" data-blok="B-06" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="552" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-06</text>
+
+    <rect x="566" y="234" class="house" data-blok="B-08" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="580" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-08</text>
+
+    <!-- Blok Rumah Kosong -->
+    <rect x="622" y="234" class="house" data-blok="B-10" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="636" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-10</text>
+
+    <rect x="650" y="234" class="house" data-blok="B-12" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="664" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-12</text>
+
+    <rect x="678" y="234" class="house" data-blok="B-14" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="692" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-14</text>
+
+    <rect x="706" y="234" class="house" data-blok="B-16" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="720" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-16</text>
+
+    <rect x="734" y="234" class="house" data-blok="B-18" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="748" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-18</text>
+
+    <rect x="762" y="234" class="house" data-blok="B-20" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="776" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-20</text>
+
+    <rect x="790" y="234" class="house" data-blok="B-22" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="804" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-22</text>
+
+    <rect x="818" y="234" class="house" data-blok="B-24" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="832" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-24</text>
+
+    <rect x="846" y="234" class="house" data-blok="B-26" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="860" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">B-26</text>
+
+     <rect x="622" y="286" class="house" data-blok="D-01" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="636" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-01</text>
+
+     <rect x="650" y="286" class="house" data-blok="D-03" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="664" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-03</text>
+
+     <rect x="678" y="286" class="house" data-blok="D-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="692" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-05</text>
+
+     <rect x="706" y="286" class="house" data-blok="D-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="720" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-07</text>
+
+     <rect x="734" y="286" class="house" data-blok="D-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="748" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-09</text>
+
+     <rect x="762" y="286" class="house" data-blok="D-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="776" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-11</text>
+
+     <rect x="790" y="286" class="house" data-blok="D-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="804" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-12A</text>
+
+     <rect x="818" y="286" class="house" data-blok="D-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="832" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-15</text>
+
+     <rect x="846" y="286" class="house" data-blok="D-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="860" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-17</text>
+
+     <!-- Blok Rumah Kosong -->
+ <rect x="902" y="234" class="house" data-blok="C-02" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="916" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-02</text>
+
+ <rect x="930" y="234" class="house" data-blok="C-04" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="944" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-04</text>
+
+ <rect x="958" y="234" class="house" data-blok="C-06" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="972" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-06</text>
+
+ <rect x="986" y="234" class="house" data-blok="C-08" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1000" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-08</text>
+
+ <rect x="1014" y="234" class="house" data-blok="C-10" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1028" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-10</text>
+
+ <rect x="1042" y="234" class="house" data-blok="C-12" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1056" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-12</text>
+
+ <rect x="1075" y="234" class="house" data-blok="C-14" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1089" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-14</text>
+
+ <rect x="1103" y="234" class="house" data-blok="C-16" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1117" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-16</text>
+
+ <rect x="1131" y="234" class="house" data-blok="C-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1145" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-17</text>
+
+ <rect x="1159" y="234" class="house" data-blok="C-18" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1173" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-18</text>
+
+ <rect x="1187" y="234" class="house" data-blok="C-19" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1201" y="262" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-19</text>
+
+ <!-- Blok Rumah Kosong -->
+ <rect x="902" y="286" class="house" data-blok="E01" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="916" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-01</text>
+
+ <rect x="930" y="286" class="house" data-blok="E-03" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="944" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-03</text>
+
+ <rect x="958" y="286" class="house" data-blok="E-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="972" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-05</text>
+
+ <rect x="986" y="286" class="house" data-blok="E-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1000" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-07</text>
+
+ <rect x="1014" y="286" class="house" data-blok="E-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1028" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">C-135</text>
+
+ <rect x="1042" y="286" class="house" data-blok="E-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1056" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-11</text>
+
+ <rect x="1075" y="286" class="house" data-blok="E-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1089" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-12A</text>
+
+ <rect x="1103" y="286" class="house" data-blok="E-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1117" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-15</text>
+
+ <rect x="1131" y="286" class="house" data-blok="E-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1145" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-17</text>
+
+ <rect x="1159" y="286" class="house" data-blok="E-19" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1173" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-19</text>
+
+ <rect x="1187" y="286" class="house" data-blok="E-21" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+ <text x="1201" y="314" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-21</text>
+
+ 
+    <!-- Blok Rumah Kosong -->
+    <rect x="622" y="368" class="house" data-blok="D-02" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="636" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-02</text>
+
+    <rect x="650" y="368" class="house" data-blok="D-04" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="664" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-04</text>
+
+    <rect x="678" y="368" class="house" data-blok="D-06" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="692" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-06</text>
+
+    <rect x="706" y="368" class="house" data-blok="D-08" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="720" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-08</text>
+
+    <rect x="734" y="368" class="house" data-blok="D-10" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="748" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-10</text>
+
+    <rect x="762" y="368" class="house" data-blok="D-12" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="776" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-12</text>
+
+    <rect x="790" y="368" class="house" data-blok="D-14" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="804" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-14</text>
+
+    <rect x="818" y="368" class="house" data-blok="D-16" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="832" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-16</text>
+
+    <rect x="846" y="368" class="house" data-blok="D-18" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="860" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">D-18</text>
+
+     <rect x="622" y="420" class="house" data-blok="F-01" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="636" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-01</text>
+
+     <rect x="650" y="420" class="house" data-blok="F-03" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="664" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-03</text>
+
+     <rect x="678" y="420" class="house" data-blok="F-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="692" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-05</text>
+
+     <rect x="706" y="420" class="house" data-blok="F-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="720" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-07</text>
+
+     <rect x="734" y="420" class="house" data-blok="F-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="748" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-09</text>
+
+     <rect x="762" y="420" class="house" data-blok="F-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="776" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-11</text>
+
+     <rect x="790" y="420" class="house" data-blok="F-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="804" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-12A</text>
+
+     <rect x="818" y="420" class="house" data-blok="F-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="832" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-15</text>
+
+     <rect x="846" y="420" class="house" data-blok="F-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="860" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-17</text>
+
+     <!-- Blok Rumah Kosong -->
+     <rect x="902" y="368" class="house" data-blok="E-02" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="916" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-02</text>
+    
+     <rect x="930" y="368" class="house" data-blok="E-04" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="944" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-04</text>
+    
+     <rect x="958" y="368" class="house" data-blok="E-06" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="972" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-06</text>
+    
+     <rect x="986" y="368" class="house" data-blok="E-08" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1000" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-08</text>
+    
+     <rect x="1014" y="368" class="house" data-blok="E-10" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1028" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-10</text>
+    
+     <rect x="1042" y="368" class="house" data-blok="E-12" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1056" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-12</text>
+    
+     <rect x="1075" y="368" class="house" data-blok="E-14" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1089" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-14</text>
+    
+     <rect x="1103" y="368" class="house" data-blok="E-16" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1117" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-16</text>
+    
+     <rect x="1131" y="368" class="house" data-blok="E-18" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1145" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-18</text>
+    
+     <rect x="1159" y="368" class="house" data-blok="E-20" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1173" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-20</text>
+    
+     <rect x="1187" y="368" class="house" data-blok="E-22" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1201" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-22</text>
+
+     <rect x="1215" y="368" class="house" data-blok="E-23" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1229" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-23</text>
+    
+     <rect x="1243" y="368" class="house" data-blok="E-24" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1257" y="396" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">E-24</text>
+    
+     <!-- Blok Rumah Kosong -->
+     <rect x="902" y="420" class="house" data-blok="F-19" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="916" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-19</text>
+    
+     <rect x="930" y="420" class="house" data-blok="F-21" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="944" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-21</text>
+    
+     <rect x="958" y="420" class="house" data-blok="F-23" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="972" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-23</text>
+    
+     <rect x="986" y="420" class="house" data-blok="F-25" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1000" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-25</text>
+    
+     <rect x="1014" y="420" class="house" data-blok="F-27" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1028" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-27</text>
+    
+     <rect x="1042" y="420" class="house" data-blok="F-29" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1056" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-29</text>
+    
+     <rect x="1075" y="420" class="house" data-blok="F-31" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1089" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-31</text>
+    
+     <rect x="1103" y="420" class="house" data-blok="F-33" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1117" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-33</text>
+    
+     <rect x="1131" y="420" class="house" data-blok="F-35" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1145" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-35</text>
+    
+     <rect x="1159" y="420" class="house" data-blok="F-37" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1173" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-37</text>
+    
+     <rect x="1187" y="420" class="house" data-blok="F-39" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1201" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-39</text>
+
+     <rect x="1215" y="420" class="house" data-blok="F-41" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1229" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-41</text>
+    
+     <rect x="1243" y="420" class="house" data-blok="F-43" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1257" y="448" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-43</text>
+
+         <!-- Blok Rumah Kosong -->
+    <rect x="622" y="502" class="house" data-blok="F-02" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="636" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-02</text>
+
+    <rect x="650" y="502" class="house" data-blok="F-04" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="664" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-04</text>
+
+    <rect x="678" y="502" class="house" data-blok="F-06" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="692" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-06</text>
+
+    <rect x="706" y="502" class="house" data-blok="F-08" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="720" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-08</text>
+
+    <rect x="734" y="502" class="house" data-blok="F-10" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="748" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-10</text>
+
+    <rect x="762" y="502" class="house" data-blok="F-12" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="776" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-12</text>
+
+    <rect x="790" y="502" class="house" data-blok="F-14" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="804" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-14</text>
+
+    <rect x="818" y="502" class="house" data-blok="F-16" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="832" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-16</text>
+
+    <rect x="846" y="502" class="house" data-blok="F-18" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="860" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-18</text>
+
+     <rect x="622" y="554" class="house" data-blok="F-45" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="636" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-45</text>
+
+     <rect x="650" y="554" class="house" data-blok="F-47" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="664" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-47</text>
+
+     <rect x="678" y="554" class="house" data-blok="F-49" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="692" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-49</text>
+
+     <rect x="706" y="554" class="house" data-blok="F-51" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="720" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-51</text>
+
+     <rect x="734" y="554" class="house" data-blok="F-53" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="748" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-53</text>
+
+     <rect x="762" y="554" class="house" data-blok="F-55" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="776" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-55</text>
+
+     <rect x="790" y="554" class="house" data-blok="F-57" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="804" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-57</text>
+
+     <rect x="818" y="554" class="house" data-blok="F-59" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="832" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-59</text>
+
+     <rect x="846" y="554" class="house" data-blok="F-61" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="860" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-61</text>
+
+          <!-- Blok Rumah Kosong -->
+          <rect x="902" y="502" class="house" data-blok="F-20" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="916" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-20</text>
+         
+          <rect x="930" y="502" class="house" data-blok="F-22" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="944" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-22</text>
+         
+          <rect x="958" y="502" class="house" data-blok="F-24" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="972" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-24</text>
+         
+          <rect x="986" y="502" class="house" data-blok="F-26" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1000" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-26</text>
+         
+          <rect x="1014" y="502" class="house" data-blok="F-28" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1028" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-28</text>
+         
+          <rect x="1042" y="502" class="house" data-blok="F-30" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1056" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-30</text>
+           
+          <rect x="1075" y="502" class="house" data-blok="F-32" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1089" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-32</text>
+         
+          <rect x="1103" y="502" class="house" data-blok="F-34" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1117" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-34</text>
+         
+          <rect x="1131" y="502" class="house" data-blok="F-36" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1145" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-36</text>
+         
+          <rect x="1159" y="502" class="house" data-blok="F-38" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1173" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-38</text>
+         
+          <rect x="1187" y="502" class="house" data-blok="F-40" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1201" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-40</text>
+     
+          <rect x="1215" y="502" class="house" data-blok="F-42" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1229" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-42</text>
+         
+          <rect x="1243" y="502" class="house" data-blok="F-44" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1257" y="530" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-44</text>
+         
+          <!-- Blok Rumah Kosong -->
+          <rect x="902" y="554" class="house" data-blok="F-63" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="916" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-63</text>
+         
+          <rect x="930" y="554" class="house" data-blok="F-65" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="944" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-65</text>
+         
+          <rect x="958" y="554" class="house" data-blok="F-67" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="972" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-67</text>
+         
+          <rect x="986" y="554" class="house" data-blok="F-69" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1000" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-69</text>
+         
+          <rect x="1014" y="554" class="house" data-blok="F-71" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1028" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-71</text>
+         
+          <rect x="1042" y="554" class="house" data-blok="F-73" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1056" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-73</text>
+         
+          <rect x="1075" y="554" class="house" data-blok="F-75" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1089" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-75</text>
+         
+          <rect x="1103" y="554" class="house" data-blok="F-77" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1117" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-77</text>
+         
+          <rect x="1131" y="554" class="house" data-blok="F-79" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1145" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-79</text>
+         
+          <rect x="1159" y="554" class="house" data-blok="F-81" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1173" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-81</text>
+         
+          <rect x="1187" y="554" class="house" data-blok="F-83" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1201" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-83</text>
+     
+          <rect x="1215" y="554" class="house" data-blok="F-85" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+          <text x="1229" y="582" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-85</text>
+     
+                   <!-- Blok Rumah Kosong -->
+    <rect x="622" y="636" class="house" data-blok="F-46" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="636" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-46</text>
+
+    <rect x="650" y="636" class="house" data-blok="F-48" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="664" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-48</text>
+
+    <rect x="678" y="636" class="house" data-blok="F-50" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="692" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-50</text>
+
+    <rect x="706" y="636" class="house" data-blok="F-52" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="720" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-52</text>
+
+    <rect x="734" y="636" class="house" data-blok="F-54" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="748" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-54</text>
+
+    <rect x="762" y="636" class="house" data-blok="F-56" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="776" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-56</text>
+
+    <rect x="790" y="636" class="house" data-blok="F-58" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="804" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-58</text>
+
+    <rect x="818" y="636" class="house" data-blok="F-60" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="832" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-60</text>
+
+    <rect x="846" y="636" class="house" data-blok="F-62" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="860" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-62</text>
+
+     <rect x="622" y="688" class="house" data-blok="F-87" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="636" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-87</text>
+
+     <rect x="650" y="688" class="house" data-blok="F-89" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="664" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-89</text>
+
+     <rect x="678" y="688" class="house" data-blok="F-91" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="692" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-91</text>
+
+     <rect x="706" y="688" class="house" data-blok="F-93" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="720" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-93</text>
+
+     <rect x="734" y="688" class="house" data-blok="F-95" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="748" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-95</text>
+
+     <rect x="762" y="688" class="house" data-blok="F-97" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="776" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-97</text>
+
+     <rect x="790" y="688" class="house" data-blok="F-99" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="804" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-99</text>
+
+     <rect x="818" y="688" class="house" data-blok="F-101" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="832" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-101</text>
+
+     <rect x="846" y="688" class="house" data-blok="F-103" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="860" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-103</text>
+
+     <!-- Blok Rumah Kosong -->
+     <rect x="902" y="636" class="house" data-blok="F-64" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="916" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-64</text>
+    
+     <rect x="930" y="636" class="house" data-blok="F-66" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="944" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-66</text>
+    
+     <rect x="958" y="636" class="house" data-blok="F-68" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="972" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-68</text>
+    
+     <rect x="986" y="636" class="house" data-blok="F-70" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1000" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-70</text>
+    
+     <rect x="1014" y="636" class="house" data-blok="F-72" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1028" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-72</text>
+    
+     <rect x="1042" y="636" class="house" data-blok="F-74" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1056" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-74</text>
+    
+     <rect x="1075" y="636" class="house" data-blok="F-76" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1089" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-76</text>
+    
+     <rect x="1103" y="636" class="house" data-blok="F-78" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1117" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-78</text>
+    
+     <rect x="1131" y="636" class="house" data-blok="F-80" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1145" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-80</text>
+    
+     <rect x="1159" y="636" class="house" data-blok="F-82" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1173" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-82</text>
+    
+     <rect x="1187" y="636" class="house" data-blok="F-84" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1201" y="664" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-84</text>
+
+     <!-- Blok Rumah Kosong -->
+     <rect x="902" y="688" class="house" data-blok="F-105" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="916" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-105</text>
+    
+     <rect x="930" y="688" class="house" data-blok="F-107" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="944" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-107</text>
+    
+     <rect x="958" y="688" class="house" data-blok="F-109" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="972" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-109</text>
+    
+     <rect x="986" y="688" class="house" data-blok="F-111" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1000" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-111</text>
+    
+     <rect x="1014" y="688" class="house" data-blok="F-112A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1028" y="716" font-size="9" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-112A</text>
+    
+     <rect x="1042" y="688" class="house" data-blok="F-113" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1056" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-113</text>
+    
+     <rect x="1075" y="688" class="house" data-blok="F-115" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1089" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-115</text>
+    
+     <rect x="1103" y="688" class="house" data-blok="F-117" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1117" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-117</text>
+    
+     <rect x="1131" y="688" class="house" data-blok="F-119" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1145" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-119</text>
+    
+     <rect x="1159" y="688" class="house" data-blok="F-120" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+     <text x="1173" y="716" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-120</text>
+
+      <!-- Blok Rumah Kosong -->
+    <rect x="622" y="770" class="house" data-blok="F-86" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="636" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-86</text>
+
+    <rect x="650" y="770" class="house" data-blok="F-88" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="664" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-88</text>
+
+    <rect x="678" y="770" class="house" data-blok="F-90" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="692" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-90</text>
+
+    <rect x="706" y="770" class="house" data-blok="F-92" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="720" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-92</text>
+
+    <rect x="734" y="770" class="house" data-blok="F-94" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="748" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-94</text>
+
+    <rect x="762" y="770" class="house" data-blok="F-96" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="776" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-96</text>
+
+    <rect x="790" y="770" class="house" data-blok="F-98" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="804" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-98</text>
+
+    <rect x="818" y="770" class="house" data-blok="F-100" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="832" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-100</text>
+
+    <rect x="846" y="770" class="house" data-blok="F-102" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="860" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-102</text>
+
+    <!-- Blok Rumah Kosong -->
+    <rect x="902" y="770" class="house" data-blok="F-104" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="916" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-104</text>
+   
+    <rect x="930" y="770" class="house" data-blok="F-106" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="944" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-106</text>
+   
+    <rect x="958" y="770" class="house" data-blok="F-108" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="972" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-108</text>
+   
+    <rect x="986" y="770" class="house" data-blok="F-110" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="1000" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-110</text>
+   
+    <rect x="1014" y="770" class="house" data-blok="F-112" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="1028" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-112</text>
+   
+    <rect x="1042" y="770" class="house" data-blok="F-114" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="1056" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-114</text>
+   
+    <rect x="1070" y="770" class="house" data-blok="F-116" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5"></rect>
+    <text x="1084" y="798" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">F-116</text>
+
+            <text x="628" y="28" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">FASUM</text>
+            <text x="770" y="78" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 9 m</text>
+            <text x="940" y="78" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 9 m</text>
+            <text x="740" y="218" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="1030" y="218" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="740" y="355" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="1030" y="355" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="740" y="490" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="1030" y="490" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="740" y="625" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="1030" y="625" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="740" y="760" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="1030" y="760" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Row 6 m</text>
+            <text x="1340" y="415" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-90, 780, 710)">Row 9 m</text>
+            <text x="1330" y="820" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-90, 780, 710)">Row 7 m</text>
+            <text x="1130" y="820" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-90, 780, 710)">Row 7 m</text>
+            <text x="870" y="820" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-90, 780, 710)">Row 7 m</text>
+            <text x="1090" y="535" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-90, 780, 710)">Row 6 m</text>
+            <text x="840" y="535" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-90, 780, 710)">Row 6 m</text>
+            <text x="1350" y="380" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">20 Meter</text>
+            <text x="1450" y="380" font-size="14" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">30 Meter</text>
+            <text x="538" y="470" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Jalan Puri Anom</text>
+
+        </svg>
+
+    </div>
+    <svg width="1200" height="220" style="top: 99px; left: 117px;">
+        <text x="460" y="50" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black">Jalan H.M Puna S</text>
+        <text x="1150" y="0" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="blue" transform="rotate(50, 950, 70)">Sungai Sei Belawan</text>
+        <text x="1350" y="235" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-90, 780, 710)">JL.UTAMA</text>
+    </svg>
+   
+</div>
+<div style="margin-top: 1200px; text-align: left; margin-left: 400px;">
+    <h3>Keterangan:</h3>
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <div style="display: flex; align-items: center;">
+            <div style="width: 30px; height: 30px; background-color: yellow; border: 2px solid black;"></div>
+            <span style="margin-left: 10px;">Rumah Kosong</span>
+        </div>
+        <div style="display: flex; align-items: center;">
+            <div style="width: 30px; height: 30px; background-color: green; border: 2px solid black;"></div>
+            <span style="margin-left: 10px;">Rumah Terisi</span>
+        </div>
+        <div style="display: flex; align-items: center;">
+            <div style="width: 30px; height: 30px; background-color: blue; border: 2px solid black;"></div>
+            <span style="margin-left: 10px;">Rumah Sudah Cash</span>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+     <!-- Pop-up Overlay -->
+     <div class="overlay"></div>
+     <!-- Pop-up Box -->
+     <div class="popup">
+         <span class="popup-close">&times;</span>
+         <div class="popup-header">Informasi Rumah</div>
+         <div id="popup-content" class="popup-content"></div>
+     </div>
+ 
+     <script>
+         // JavaScript untuk menangani klik pada setiap kotak
+         document.querySelectorAll('.house').forEach(function (element) {
+             element.addEventListener('click', function () {
+                 var blok = this.getAttribute('data-blok');
+                 var status = this.getAttribute('data-status');
+                 var kredit = this.getAttribute('data-kredit');
+                 
+                 document.getElementById('popup-content').innerHTML = 
+                     '<p>Nama Blok: ' + blok + '</p>' +
+                     '<p>Status Rumah: ' + status + '</p>' +
+                     '<p>Status Kredit: ' + kredit + '</p>';
+ 
+                 // Menampilkan overlay dan pop-up
+                 document.querySelector('.overlay').style.display = 'block';
+                 document.querySelector('.popup').style.display = 'block';
+             });
+         });
+ 
+         // Menangani penutupan pop-up
+         document.querySelector('.popup-close').addEventListener('click', function () {
+             document.querySelector('.overlay').style.display = 'none';
+             document.querySelector('.popup').style.display = 'none';
+         });
+ 
+         // Menutup pop-up ketika overlay diklik
+         document.querySelector('.overlay').addEventListener('click', function () {
+             this.style.display = 'none';
+             document.querySelector('.popup').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

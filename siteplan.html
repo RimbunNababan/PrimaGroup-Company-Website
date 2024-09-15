@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Siteplan Mutiara Regency</title>
+    <link rel="icon" href="primagrup.png" type="image/png" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+      }
+      .siteplan-container {
+        margin-top: 150px;
+      }
+      .siteplan-container text {
+        pointer-events: none;
+      }
+      .row-container {
+        margin-top: -245px;
+        pointer-events: none;
+      }
+      .row-text {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        display: inline-block;
+        pointer-events: none;
+      }
+      .box-container {
+        margin-top: -15px;
+      }
+      .house {
+        cursor: pointer;
+      }
+      /* Styles for the pop-up */
+      .popup {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 2px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        max-width: 300px;
+        width: 100%;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      .popup-header {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .popup-close {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        color: #555;
+      }
+      .popup-close:hover {
+        color: #000;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+      /* Animasi untuk Pop-up */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -45%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .popup-content p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">SITEPLAN PERUMAHAN MUTIARA REGENCY</h2>
+    <div class="siteplan-container">
+      <svg width="1500" height="250">
+        <!-- Kotak pertama -->
+        <rect
+          class="house"
+          data-blok="A-58"
+          data-status="Kosong"
+          data-kredit="Belum Lunas"
+          width="30"
+          height="50"
+          fill="yellow"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="15"
+          y="30"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-58
+        </text>
+
+        <!-- Kotak kedua -->
+        <rect
+          class="house"
+          data-blok="A-57"
+          data-status="Kosong"
+          data-kredit="Belum Lunas"
+          x="30"
+          width="30"
+          height="50"
+          fill="yellow"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="45"
+          y="30"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-57
+        </text>
+
+        <!-- Kotak ketiga -->
+        <rect
+          class="house"
+          data-blok="A-56"
+          data-status="Kosong"
+          data-kredit="Belum Lunas"
+          x="60"
+          width="30"
+          height="50"
+          fill="yellow"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="75"
+          y="30"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-56
+        </text>
+
+        <!-- Kotak keempat -->
+        <rect
+          class="house"
+          data-blok="A-55"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="100"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="115"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-55
+        </text>
+
+        <!-- Kotak kelima -->
+        <rect
+          class="house"
+          data-blok="A-54"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="130"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="145"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-54
+        </text>
+
+        <!-- Kotak keenam -->
+        <rect
+          class="house"
+          data-blok="A-53"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="160"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="175"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-53
+        </text>
+
+        <!-- Kotak ketujuh -->
+        <rect
+          class="house"
+          data-blok="A-52"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="190"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="205"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-52
+        </text>
+
+        <!-- Kotak kedelapan -->
+        <rect
+          class="house"
+          data-blok="A-51"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="220"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="235"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-51
+        </text>
+
+        <!-- Kotak kesembilan -->
+        <rect
+          class="house"
+          data-blok="A-50"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="250"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="265"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-50
+        </text>
+
+        <!-- Kotak kesepuluh -->
+        <rect
+          class="house"
+          data-blok="A-49"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="280"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="295"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-49
+        </text>
+
+        <!-- Kotak kesebelas -->
+        <rect
+          class="house"
+          data-blok="A-48"
+          data-status="Terisi"
+          data-kredit="Belum Lunas"
+          x="310"
+          y="5"
+          width="30"
+          height="50"
+          fill="white"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="325"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-48
+        </text>
+
+        <!-- Kotak keduabelas -->
+        <rect
+          class="house"
+          data-blok="A-47"
+          data-status="Sudah Cash"
+          data-kredit="Lunas"
+          x="350"
+          y="5"
+          width="30"
+          height="50"
+          fill="blue"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="365"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-47
+        </text>
+
+        <!-- Kotak ketiga belas -->
+        <rect
+          class="house"
+          data-blok="A-46"
+          data-status="Sudah Cash"
+          data-kredit="Lunas"
+          x="380"
+          y="5"
+          width="30"
+          height="50"
+          fill="blue"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="395"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-46
+        </text>
+
+        <!-- Kotak keempat belas -->
+        <rect
+          class="house"
+          data-blok="A-45"
+          data-status="Sudah Cash"
+          data-kredit="Lunas"
+          x="410"
+          y="5"
+          width="30"
+          height="50"
+          fill="blue"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="425"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-45
+        </text>
+
+        <!-- Kotak kelima belas -->
+        <rect
+          class="house"
+          data-blok="A-44"
+          data-status="Sudah Cash"
+          data-kredit="Lunas"
+          x="440"
+          y="5"
+          width="30"
+          height="50"
+          fill="blue"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="455"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-44
+        </text>
+
+        <!-- Kotak keenam belas -->
+        <rect
+          class="house"
+          data-blok="A-43"
+          data-status="Sudah Cash"
+          data-kredit="Lunas"
+          x="470"
+          y="5"
+          width="30"
+          height="50"
+          fill="blue"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="485"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-43
+        </text>
+
+        <!-- Kotak ketujuh belas -->
+        <rect
+          class="house"
+          data-blok="A-42"
+          data-status="Sudah Cash"
+          data-kredit="Lunas"
+          x="500"
+          y="5"
+          width="30"
+          height="50"
+          fill="blue"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <text
+          x="515"
+          y="35"
+          font-size="10"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          A-42
+        </text>
+        <line
+          x1="545"
+          y1="55"
+          x2="1420"
+          y2="55"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="535"
+          y1="0"
+          x2="545"
+          y2="55"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line x1="0" y1="0" x2="535" y2="0" stroke="black" stroke-width="2.0" />
+        <line
+          x1="545"
+          y1="55"
+          x2="1400"
+          y2="55"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="1280"
+          y1="90"
+          x2="1420"
+          y2="90"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="1280"
+          y1="155"
+          x2="1280"
+          y2="90"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="0"
+          y1="155"
+          x2="1280"
+          y2="155"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="1420"
+          y1="55"
+          x2="1420"
+          y2="0"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="1420"
+          y1="175"
+          x2="1420"
+          y2="90"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="1460"
+          y1="175"
+          x2="1460"
+          y2="0"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <line
+          x1="1420"
+          y1="175"
+          x2="1460"
+          y2="175"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <polygon points="1300,65 1300,85 1280,75" fill="black" />
+        <line
+          x1="1285"
+          y1="75"
+          x2="1335"
+          y2="75"
+          stroke="black"
+          stroke-width="1.5"
+        />
+      </svg>
+
+      <div class="row-container">
+        <h3 class="row-text" style="margin-left: 65px">ROW 6.5</h3>
+        <h3 class="row-text" style="margin-left: 200px">ROW 6.5</h3>
+        <h3 class="row-text" style="margin-left: 230px">ROW 6.5</h3>
+        <h3 class="row-text" style="margin-left: 350px">ROW 6.5</h3>
+        <h5 class="row-text" style="margin-left: 155px">Jalan Masuk</h5>
+        <h5
+          class="row-text"
+          style="writing-mode: vertical-lr; margin-left: 10px"
+        >
+          JL.PASAR I
+        </h5>
+      </div>
+
+      <!-- Menambahkan kotak lagi di bawah tulisan ROW 6.5 -->
+      <div class="box-container">
+        <svg width="1500" height="250">
+          <rect
+            class="house"
+            data-blok="B-58"
+            data-status="Kosong"
+            data-kredit="Belum Lunas"
+            x="0"
+            width="30"
+            height="50"
+            fill="green"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="15"
+            y="30"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-58
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-57"
+            data-status="Kosong"
+            data-kredit="Belum Lunas"
+            x="30"
+            width="30"
+            height="50"
+            fill="green"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="45"
+            y="30"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-57
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-56"
+            data-status="Kosong"
+            data-kredit="Belum Lunas"
+            x="60"
+            width="30"
+            height="50"
+            fill="green"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="75"
+            y="30"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-56
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-55"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="100"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="115"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-55
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-54"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="130"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="145"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-54
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-53"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="160"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="175"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-53
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-52"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="190"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="205"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-52
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-51"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="220"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="235"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-51
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-50"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="250"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="265"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-50
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-49"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="280"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="295"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-49
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-48"
+            data-status="Terisi"
+            data-kredit="Belum Lunas"
+            x="310"
+            y="5"
+            width="30"
+            height="50"
+            fill="white"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="325"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-48
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-47"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="350"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="365"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-47
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-46"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="380"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="395"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-46
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-45"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="410"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="425"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-45
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-44"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="440"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="455"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-44
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-43"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="470"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="485"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-43
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-42"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="500"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="515"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-42
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-41"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="530"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="545"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-41
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-40"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="560"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="575"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-40
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-39"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="590"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="605"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-39
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-38"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="620"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="635"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-38
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-37"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="660"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="675"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-37
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-36"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="690"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="705"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-36
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-35"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="720"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="735"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-35
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-34"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="750"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="765"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-34
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-33"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="780"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="795"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-33
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-32"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="810"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="825"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-32
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-31"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="840"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="855"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-31
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-30"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="870"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="885"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-30
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-29"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="900"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="915"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-29
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-28"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="930"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="945"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-28
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-27"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="970"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="985"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-27
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-26"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1000"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1015"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-26
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-25"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1030"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1045"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-25
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-24"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1060"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1075"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-24
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-23"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1090"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1105"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-23
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-22"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1120"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1135"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-22
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-21"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1150"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1165"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-21
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-20"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1180"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1195"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-20
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-19"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1210"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1225"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-19
+          </text>
+
+          <rect
+            class="house"
+            data-blok="B-18"
+            data-status="Sudah Cash"
+            data-kredit="Lunas"
+            x="1240"
+            y="5"
+            width="30"
+            height="50"
+            fill="blue"
+            stroke="black"
+            stroke-width="1.5"
+          />
+          <text
+            x="1255"
+            y="35"
+            font-size="10"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            B-18
+          </text>
+        </svg>
+      </div>
+    </div>
+    <div style="margin-top: -50px; text-align: left; margin-left: 20px">
+      <h3>Keterangan:</h3>
+      <div style="display: flex; align-items: center; gap: 20px">
+        <div style="display: flex; align-items: center">
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              background-color: yellow;
+              border: 2px solid black;
+            "
+          ></div>
+          <span style="margin-left: 10px">Rumah Kosong</span>
+        </div>
+        <div style="display: flex; align-items: center">
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              background-color: green;
+              border: 2px solid black;
+            "
+          ></div>
+          <span style="margin-left: 10px">Rumah Terisi</span>
+        </div>
+        <div style="display: flex; align-items: center">
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              background-color: blue;
+              border: 2px solid black;
+            "
+          ></div>
+          <span style="margin-left: 10px">Rumah Sudah Cash</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop-up Overlay -->
+    <div class="overlay"></div>
+    <!-- Pop-up Box -->
+    <div class="popup">
+      <span class="popup-close">&times;</span>
+      <div class="popup-header">Informasi Rumah</div>
+      <div id="popup-content" class="popup-content"></div>
+    </div>
+
+    <script>
+      // JavaScript untuk menangani klik pada setiap kotak
+      document.querySelectorAll(".house").forEach(function (element) {
+        element.addEventListener("click", function () {
+          var blok = this.getAttribute("data-blok");
+          var status = this.getAttribute("data-status");
+          var kredit = this.getAttribute("data-kredit");
+
+          document.getElementById("popup-content").innerHTML =
+            "<p>Nama Blok: " +
+            blok +
+            "</p>" +
+            "<p>Status Rumah: " +
+            status +
+            "</p>" +
+            "<p>Status Kredit: " +
+            kredit +
+            "</p>";
+
+          // Menampilkan overlay dan pop-up
+          document.querySelector(".overlay").style.display = "block";
+          document.querySelector(".popup").style.display = "block";
+        });
+      });
+
+      // Menangani penutupan pop-up
+      document
+        .querySelector(".popup-close")
+        .addEventListener("click", function () {
+          document.querySelector(".overlay").style.display = "none";
+          document.querySelector(".popup").style.display = "none";
+        });
+
+      // Menutup pop-up ketika overlay diklik
+      document.querySelector(".overlay").addEventListener("click", function () {
+        this.style.display = "none";
+        document.querySelector(".popup").style.display = "none";
+      });
+    </script>
+  </body>
+</html>

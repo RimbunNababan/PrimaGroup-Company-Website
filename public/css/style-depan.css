@@ -1,0 +1,126 @@
+body {
+  background-color: #f1f2f6 !important;
+}
+
+.jumbotron {
+  color: #343a40;
+  background-image: url("/dist/images/bg.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 65vh;
+  padding: 0 !important;
+}
+
+.jumbotron-bg-color {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2rem 2rem;
+  height: 100%;
+}
+
+.underline {
+  display: block;
+  width: 20%;
+  height: 3px;
+  background: #343a40;
+  margin-left: 10px;
+}
+
+.semisemibold {
+  font-weight: 400 !important;
+}
+
+.semi-bold {
+  font-weight: 500 !important;
+}
+
+.nav-link {
+  background-color: white;
+  color: #343a40;
+  font-size: 20px;
+  border-bottom: 2px solid #adadad;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: #343a40;
+  box-shadow: 0px 1px 1px 0px #adadad;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.big-padding {
+  padding: 8rem 5rem;
+}
+
+.siteplan-preview {
+  display: block;
+  overflow: scroll;
+  height: 500px;
+  position: relative;
+}
+
+.siteplan-preview svg,
+.siteplan-preview img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.small-small-small {
+  font-size: 40%;
+}
+
+.mt--75 {
+  margin-top: -75px;
+}
+
+.top-title {
+  background-color: #fff;
+  color: #343a40;
+  width: 50%;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .top-title {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .jumbotron.detail {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .jumbotron {
+    height: 70vh;
+  }
+
+  .jumbotron.detail {
+    height: 115vh;
+  }
+
+  .display-4 {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .jumbotron-bg-color {
+    padding: 1rem;
+  }
+
+  .jumbotron.detail {
+    height: 135vh;
+  }
+}

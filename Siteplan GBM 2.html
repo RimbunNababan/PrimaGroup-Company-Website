@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siteplan Griya Bintang Mutiara 2</title>
+    <link rel="icon" href="primagrup.png" type="image/png">
+    <style>
+                /* Memusatkan teks pada h2 */
+                body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+overflow-y: hidden;
+user-select: none;
+        }
+        .container {
+            margin: 20px;
+            padding: 0;
+            position: relative;
+            top: 0;
+            left: 0; /* Posisikan container di kiri layar */
+            width: auto;
+            height: auto;
+        }
+        .lines-container {
+            position: absolute;
+            top: 0;
+            left: -200px; /* Pastikan garis berada di kiri layar */
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .garis-miring {
+            position: absolute;
+            top: 0;
+            left: -200px; /* Pastikan garis berada di kiri layar */
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 12;
+        }
+        .lines-container svg {
+            position: absolute;
+        }
+        .svg-container {
+            position: absolute;
+            top: 0;
+            left: -200px; /* Pastikan svg container berada di kiri layar */
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+        .svg-container text {
+            pointer-events: none;
+            user-select: none;
+        }
+    h2 {
+        text-align: center;
+        pointer-events: none;
+        z-index: 1;
+        position: relative;
+        user-select: none;
+    }
+    /* Styles for the pop-up */
+    .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 300px;
+            width: 100%;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .popup-header {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .popup-close {
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+        .popup-close:hover {
+            color: #000;
+        }
+        .house{
+            cursor: pointer;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        /* Animasi untuk Pop-up */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -45%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .popup-content p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+</style>
+</head>
+    <body>
+        <div class="container">
+            <h2>Siteplan Perumahan Griya Bintang Mutiara 2</h2>
+            <div class="lines-container">
+                 <!--Garis Diagonal-->
+            <!-- SVG line berada di atas gambar -->
+            <svg width="100" height="400" class="diagonal-line" style="top: 113px; left: 237px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="70" y1="0" x2="0" y2="380" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="400" class="diagonal-line" style="top: 115px; left: 253px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="70" y1="0" x2="0" y2="380" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 443px; left: 237px;">
+                <line x1="0" y1="50" x2="17" y2="50" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 62px; left: 306px;">
+                <line x1="0" y1="50" x2="17" y2="52" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 242px; left: 290px;">
+                <line x1="0" y1="50" x2="120" y2="57" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 242px; left: 290px;">
+                <line x1="0" y1="50" x2="130" y2="64" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="100" height="400" class="diagonal-line" style="top: 297px; left: 424px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="90" y1="39" x2="0" y2="40" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="400" class="diagonal-line" style="top: 333px; left: 462px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="5" y1="20" x2="0" y2="30" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 275px; left: 285px;">
+                <line x1="0" y1="50" x2="140" y2="62" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 302px; left: 280px;">
+                <line x1="0" y1="50" x2="183" y2="60" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="100" height="400" class="diagonal-line" style="top: 240px; left: 410px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="10" y1="0" x2="0" y2="60" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 190px; left: 420px;">
+                <line x1="0" y1="50" x2="54" y2="54" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="100" height="400" class="diagonal-line" style="top: 195px; left: 474px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="10" y1="0" x2="0" y2="50" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 135px; left: 483px;">
+                <line x1="0" y1="60" x2="170" y2="55" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 302px; left: 467px;">
+                <line x1="0" y1="50" x2="50" y2="55" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="100" class="horizontal-line" style="top: 285px; left: 514px;">
+                <line x1="0" y1="50" x2="4" y2="73" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="100" height="400" class="diagonal-line" style="top: 328px; left: 509px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="10" y1="30" x2="0" y2="130" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="100" height="400" class="diagonal-line" style="top: 397px; left: 459.5px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="50" y1="60" x2="0" y2="100" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 370px; left: 460px;">
+                <line x1="-1450" y1="50" x2="982" y2="178" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 134px; left: 498px;">
+                <line x1="-1450" y1="50" x2="956" y2="176" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 168px; left: 541px;">
+                <line x1="-1450" y1="50" x2="930" y2="176" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 270px; left: 536px;">
+                <line x1="-1450" y1="50" x2="931" y2="176" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 303px; left: 512px;">
+                <line x1="-1450" y1="50" x2="954" y2="176" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="400" class="diagonal-line" style="top: 261px; left: 1454px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="75" y1="37" x2="0" y2="50" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="200" height="300" style="top: 295px; left: 1450px;">
+                <line x1="20" y1="50" x2= "15" y2="150" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 430px; left: 1445px;">
+                <line x1="20" y1="50" x2= "15" y2="160" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 539px; left: 1460px;">
+                <line x1="0" y1="50" x2="370" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 122px; left: 653px;">
+                <line x1="0" y1="67" x2="95" y2="85" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 140px; left: 748px;">
+                <line x1="0" y1="67" x2="173" y2="86" stroke="black" stroke-width="2"/>
+            </svg>
+           
+            <svg width="400" height="300" style="top: 159px; left: 920px;">
+                <line x1="0" y1="67" x2="340" y2="66" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="600" height="300" style="top: 158px; left: 1260px;">
+                <line x1="0" y1="67" x2="590" y2="80" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 188px; left: 1829px;">
+                <line x1="20" y1="50" x2= "25" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 163px; left: 1830px;">
+                <line x1="20" y1="50" x2= "27" y2="90" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 163px; left: 1845px;">
+                <line x1="20" y1="50" x2= "26" y2="80" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="600" height="300" style="top: 190px; left: 1853px;">
+                <line x1="0" y1="67" x2="430" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="600" height="300" style="top: 186px; left: 1857px;">
+                <line x1="0" y1="67" x2="432" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="600" height="300" style="top: 175px; left: 1870px;">
+                <line x1="0" y1="67" x2="430" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top:210px; left: 2262px;">
+                <line x1="20" y1="50" x2= "5" y2="110" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top:208px; left: 2267px;">
+                <line x1="20" y1="50" x2= "2" y2="118" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top:196px; left: 2279px;">
+                <line x1="20" y1="50" x2= "1" y2="127" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 276px; left: 2248px;">
+                <line x1="20" y1="50" x2= "35" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 273px; left: 2259px;">
+                <line x1="20" y1="50" x2= "35" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 282px; left: 2289px;">
+                <line x1="20" y1="50" x2= "5" y2="60" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 290px; left: 2293px;">
+                <line x1="20" y1="50" x2= "5" y2="60" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 300px; left: 2278px;">
+                <line x1="20" y1="50" x2= "35" y2="90" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 340px; left: 2293px;">
+                <line x1="20" y1="50" x2= "12" y2="90" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 380px; left: 2283px;">
+                <line x1="22" y1="50" x2= "0" y2="115" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 443px; left: 2144px;">
+                <line x1="140" y1="50" x2= "27" y2="157" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 549px; left: 2152px;">
+                <line x1="20" y1="50" x2= "7" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 568px; left: 2100px;">
+                <line x1="60" y1="50" x2= "0" y2="80" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 296px; left: 2263px;">
+                <line x1="20" y1="50" x2= "33" y2="105" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 350px; left: 2276px;">
+                <line x1="20" y1="50" x2= "20" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 370px; left: 2276px;">
+                <line x1="20" y1="50" x2= "1" y2="115" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 434px; left: 2137.5px;">
+                <line x1="140" y1="50" x2= "25" y2="160" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 545px; left: 2142px;">
+                <line x1="20" y1="50" x2= "7" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 564px; left: 2090px;">
+                <line x1="60" y1="50" x2= "7" y2="77" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 269px; left: 2246px;">
+                <line x1="20" y1="50" x2= "15" y2="70" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 289px; left: 2241px;">
+                <line x1="20" y1="50" x2= "35" y2="120" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 358px; left: 2257px;">
+                <line x1="20" y1="50" x2= "5" y2="110" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 417px; left: 2123.5px;">
+                <line x1="140" y1="50" x2= "0" y2="182" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 500px; left: 1421px;">
+                <line x1="20" y1="50" x2= "20" y2="120" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 569px; left: 1441px;">
+                <line x1="0" y1="50" x2="381" y2="69" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="200" height="300" style="top: 549px; left: 1802px;">
+                <line x1="30" y1="50" x2= "20" y2="90" stroke="black" stroke-width="2"/>
+            </svg>
+            <svg width="1000" height="500" class="horizontal-line" style="top: 549px; left: 1832px;">
+                <line x1="0" y1="50" x2="292" y2="50" stroke="black" stroke-width="2"/>
+            </svg>
+            </div>
+            <svg width="500" height="400" class="garis-miring" style="top: 150px; left: 550px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="200" y1="20" x2="0" y2="440" stroke="black" stroke-width="2" />
+            </svg>
+            <svg width="500" height="400" class="garis-miring" style="top: 150px; left: 570px;">
+                <!-- Membuat garis vertikal dari kiri atas (10, 10) ke kiri bawah (10, 290) -->
+                <line x1="200" y1="20" x2="0" y2="440" stroke="black" stroke-width="2" />
+            </svg>
+            <div class="svg-container">
+                <svg width="2800" height="600">
+                    <!-- Blok Rumah Kosong -->
+                    <rect x="546" y="210" class="house" data-blok="B-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="558" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-05</text>
+                    <rect x="574" y="210" class="house" data-blok="B-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="586" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-07</text>
+                    <rect x="602" y="210" class="house" data-blok="B-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="614" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-09</text>
+                    <rect x="630" y="210" class="house" data-blok="B-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="642" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-11</text>
+                    <rect x="658" y="210" class="house" data-blok="B-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="670" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-12A</text>
+                    <rect x="686" y="210" class="house" data-blok="B-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="698" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-15</text>
+                    <rect x="714" y="210" class="house" data-blok="B-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="726" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-17</text>
+                    <rect x="742" y="210" class="house" data-blok="B-19" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="754" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-19</text>
+                    <rect x="770" y="210" class="house" data-blok="B-21" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="782" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-21</text>
+                    <rect x="798" y="210" class="house" data-blok="B-23" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="810" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-23</text>
+                    <rect x="826" y="210" class="house" data-blok="B-25" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="840" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-25</text>
+                    <rect x="854" y="210" class="house" data-blok="B-27" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="868" y="238" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">B-27</text>
+                    
+                    <!-- Blok Rumah Kosong -->
+                    <rect x="954" y="210" class="house" data-blok="B-29" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="967" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 590, 238)">B-29</text>
+                    <rect x="982" y="210" class="house" data-blok="B-31" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="995" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 590, 238)">B-31</text>
+                    <rect x="1010" y="210" class="house" data-blok="B-33" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1023" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 590, 238)">B-33</text>
+                    <rect x="1038" y="210" class="house" data-blok="B-35" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1051" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 590, 235)">B-35</text>
+                    <rect x="1066" y="210" class="house" data-blok="B-37" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1079" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 590, 235)">B-37</text>
+                    <rect x="1094" y="210" class="house" data-blok="B-39" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1107" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 590, 238)">B-39</text>
+                    <rect x="1122" y="210" class="house" data-blok="B-41" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1135" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 590, 238)">B-41</text>
+                    <rect x="1150" y="210" class="house" data-blok="B-43" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1163" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">B-43</text>
+                    <rect x="1178" y="210" class="house" data-blok="B-45" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1191" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">B-45</text>
+                    <rect x="1206" y="210" class="house" data-blok="B-47" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1219" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">B-47</text>
+                    <rect x="1234" y="210" class="house" data-blok="B-49" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1247" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 610, 238)">B-49</text>
+                    <rect x="1262" y="210" class="house" data-blok="B-51" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1275" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 610, 238)">B-51</text>
+                    <rect x="1290" y="210" class="house" data-blok="B-53" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1303" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 620, 238)">B-53</text>
+                    <rect x="1318" y="210" class="house" data-blok="B-55" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1331" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 620, 238)">B-55</text>
+                    <rect x="1346" y="210" class="house" data-blok="B-57" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1359" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 620, 238)">B-57</text>
+                    <rect x="1374" y="210" class="house" data-blok="B-59" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1387" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 620, 238)">B-59</text>
+                    <rect x="1402" y="210" class="house" data-blok="B-61" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1415" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 620, 238)">B-61</text>
+                    <rect x="1430" y="210" class="house" data-blok="B-63" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1443" y="234" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 620, 238)">B-63</text>
+
+                    <!-- Blok Rumah Kosong -->
+                    <rect x="1530" y="195" class="house" data-blok="B-64" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1543" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 640, 238)">B-64</text>
+                    <rect x="1558" y="195" class="house" data-blok="B-65" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1571" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 640, 238)">B-65</text>
+                    <rect x="1586" y="195" class="house" data-blok="B-66" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1599" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 640, 238)">B-66</text>
+                    <rect x="1614" y="195" class="house" data-blok="B-67" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1627" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 640, 238)">B-67</text>
+                    <rect x="1642" y="195" class="house" data-blok="B-68" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1655" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 640, 238)">B-68</text>
+                    <rect x="1670" y="195" class="house" data-blok="B-69" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1683" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 640, 238)">B-69</text>
+                    <rect x="1698" y="195" class="house" data-blok="B-70" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1711" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 640, 238)">B-70</text>
+                    <rect x="1726" y="195" class="house" data-blok="B-71" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1739" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 680, 258)">B-71</text>
+                    <rect x="1754" y="195" class="house" data-blok="B-72" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1767" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 680, 238)">B-72</text>
+                    <rect x="1782" y="195" class="house" data-blok="B-73" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1795" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 680, 238)">B-73</text>
+                    <rect x="1810" y="195" class="house" data-blok="B-74" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1823" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 680, 238)">B-74</text>
+                    <rect x="1838" y="195" class="house" data-blok="B-75" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1851" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 680, 238)">B-75</text>
+                    <rect x="1866" y="195" class="house" data-blok="B-76" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1879" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 680, 238)">B-76</text>
+                    <rect x="1894" y="195" class="house" data-blok="B-77" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1907" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-77</text>
+                    <rect x="1922" y="195" class="house" data-blok="B-78" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1936" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-78</text>
+                    <rect x="1950" y="195" class="house" data-blok="B-79" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1963" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-79</text>
+                    <rect x="1978" y="195" class="house" data-blok="B-80" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1991" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-80</text>
+                    <rect x="2006" y="195" class="house" data-blok="B-81" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2019" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-81</text>
+                    <rect x="2034" y="195" class="house" data-blok="B-82" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2047" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-82</text>
+                    <rect x="2062" y="195" class="house" data-blok="B-83" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2075" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-83</text>
+                    <rect x="2090" y="195" class="house" data-blok="B-84" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2103" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-84</text>
+                    <rect x="2118" y="195" class="house" data-blok="B-85" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2131" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-85</text>
+                    <rect x="2146" y="195" class="house" data-blok="B-86" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2159" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-86</text>
+                    <rect x="2174" y="195" class="house" data-blok="B-87" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2187" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-87</text>
+                    <rect x="2202" y="195" class="house" data-blok="B-88" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2215" y="209" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 700, 238)">B-88</text>
+
+                    <!-- 48 Blok -->
+                    <rect x="1530" y="285" class="house" data-blok="C-01" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1543" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">C-01</text>
+                    <rect x="1558" y="285" class="house" data-blok="C-02" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1571" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">C-02</text>
+                    <rect x="1586" y="285" class="house" data-blok="C-03" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1599" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">C-03</text>
+                    <rect x="1614" y="285" class="house" data-blok="C-04" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1627" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">C-04</text>
+                    <rect x="1642" y="285" class="house" data-blok="C-05" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1655" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">C-05</text>
+                    <rect x="1670" y="285" class="house" data-blok="C-06" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1683" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">C-06</text>
+                    <rect x="1698" y="285" class="house" data-blok="C-07" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1711" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 600, 238)">C-07</text>
+                    <rect x="1726" y="285" class="house" data-blok="C-08" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1739" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-08</text>
+                    <rect x="1754" y="285" class="house" data-blok="C-09" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1767" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-09</text>
+                    <rect x="1782" y="285" class="house" data-blok="C-10" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1795" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-10</text>
+                    <rect x="1810" y="285" class="house" data-blok="C-11" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1823" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-11</text>
+                    <rect x="1838" y="285" class="house" data-blok="C-12" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1851" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-12</text>
+                    <rect x="1866" y="285" class="house" data-blok="C-12A" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1879" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-12A</text>
+                    <rect x="1894" y="285" class="house" data-blok="C-14" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1907" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-14</text>
+                    <rect x="1922" y="285" class="house" data-blok="C-15" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1936" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-15</text>
+                    <rect x="1950" y="285" class="house" data-blok="C-16" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1963" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-16</text>
+                    <rect x="1978" y="285" class="house" data-blok="C-17" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1991" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-17</text>
+                    <rect x="2006" y="285" class="house" data-blok="C-18" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2019" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-18</text>
+                    <rect x="2034" y="285" class="house" data-blok="C-19" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2047" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-19</text>
+                    <rect x="2062" y="285" class="house" data-blok="C-20" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2075" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 650, 238)">C-20</text>
+                    <rect x="2090" y="285" class="house" data-blok="C-21" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2103" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 670, 238)">C-21</text>
+                    <rect x="2118" y="285" class="house" data-blok="C-22" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2131" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 670, 238)">C-22</text>
+                    <rect x="2146" y="285" class="house" data-blok="C-23" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2159" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 670, 238)">C-23</text>
+                    <rect x="2174" y="285" class="house" data-blok="C-24" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2187" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 670, 238)">C-24</text>
+                    <rect x="2202" y="285" class="house" data-blok="C-25" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2215" y="299" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 670, 238)">C-25</text>
+                    
+                    <rect x="1530" y="337" class="house" data-blok="C-27" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>                  
+                   <text x="1543" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-27</text>
+                    <rect x="1558" y="337" class="house" data-blok="C-29" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1571" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-29</text>
+                    <rect x="1586" y="337" class="house" data-blok="C-31" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1599" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-31</text>
+                    <rect x="1614" y="337" class="house" data-blok="C-33" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1627" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-33</text>
+                    <rect x="1642" y="337" class="house" data-blok="C-35" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1655" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-35</text>
+                    <rect x="1670" y="337" class="house" data-blok="C-37" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1683" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-37</text>
+                    <rect x="1698" y="337" class="house" data-blok="C-39" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1711" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-39</text>
+                    <rect x="1726" y="337" class="house" data-blok="C-41" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1739" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-41</text>
+                    <rect x="1754" y="337" class="house" data-blok="C-43" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1767" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-43</text>
+                    <rect x="1782" y="337" class="house" data-blok="C-45" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1795" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-45</text>
+                    <rect x="1810" y="337" class="house" data-blok="C-47" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1823" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-47</text>
+                    <rect x="1838" y="337" class="house" data-blok="C-49" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1851" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-49</text>
+                    <rect x="1866" y="337" class="house" data-blok="C-51" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1879" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-51</text>
+                    <rect x="1894" y="337" class="house" data-blok="C-53" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1907" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-53</text>
+                    <rect x="1922" y="337" class="house" data-blok="C-55" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1936" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-55</text>
+                    <rect x="1950" y="337" class="house" data-blok="C-57" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1963" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-57</text>
+                    <rect x="1978" y="337" class="house" data-blok="C-59" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1991" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-59</text>
+                    <rect x="2006" y="337" class="house" data-blok="C-61" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2019" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-61</text>
+                    <rect x="2034" y="337" class="house" data-blok="C-63" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2047" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-63</text>
+                    <rect x="2062" y="337" class="house" data-blok="C-65" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2075" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-65</text>
+                    <rect x="2090" y="337" class="house" data-blok="C-67" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2103" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-67</text>
+                    <rect x="2118" y="337" class="house" data-blok="C-69" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2131" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-69</text>
+                    <rect x="2146" y="337" class="house" data-blok="C-70" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2159" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-70</text>
+                    <rect x="2174" y="337" class="house" data-blok="C-71" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2187" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-71</text>
+                    <rect x="2202" y="337" class="house" data-blok="C-72" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2215" y="351" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-72</text>
+       
+                    <!-- 31 Blok -->
+                    <rect x="1530" y="425" class="house" data-blok="C-26" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1546" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-26</text>
+                    <rect x="1558" y="425" class="house" data-blok="C-28" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1574" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-28</text>
+                    <rect x="1586" y="425" class="house" data-blok="C-30" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1602" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-30</text>
+                    <rect x="1614" y="425" class="house" data-blok="C-32" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1630" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-32</text>
+                    <rect x="1642" y="425" class="house" data-blok="C-34" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1658" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-34</text>
+                    <rect x="1670" y="425" class="house" data-blok="C-36" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1686" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-36</text>
+                    <rect x="1698" y="425" class="house" data-blok="C-38" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1714" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-38</text>
+                    <rect x="1726" y="425" class="house" data-blok="C-40" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1742" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-40</text>
+                    <rect x="1754" y="425" class="house" data-blok="C-42" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1770" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-42</text>
+                    <rect x="1782" y="425" class="house" data-blok="C-44" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1798" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-44</text>
+                    <rect x="1810" y="425" class="house" data-blok="C-46" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1826" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-46</text>
+                    <rect x="1838" y="425" class="house" data-blok="C-48" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1854" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-48</text>
+                    <rect x="1866" y="425" class="house" data-blok="C-50" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1882" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-50</text>
+                    <rect x="1894" y="425" class="house" data-blok="C-52" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1910" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-52</text>
+                    <rect x="1922" y="425" class="house" data-blok="C-54" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1939" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-54</text>
+                    <rect x="1950" y="425" class="house" data-blok="C-56" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1966" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-56</text>
+                    <rect x="1978" y="425" class="house" data-blok="C-58" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1994" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-58</text>
+                    <rect x="2006" y="425" class="house" data-blok="C-60" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2022" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-60</text>
+                    <rect x="2034" y="425" class="house" data-blok="C-62" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2050" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-62</text>
+                    <rect x="2062" y="425" class="house" data-blok="C-64" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2078" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-64</text>
+                    <rect x="2090" y="425" class="house" data-blok="C-66" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2106" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-66</text>
+                    <rect x="2118" y="425" class="house" data-blok="C-68" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="2134" y="439" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-68</text>
+                    
+                    <rect x="1530" y="477" class="house" data-blok="C-73" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1546" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-73</text>
+                    <rect x="1558" y="477" class="house" data-blok="C-74" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1574" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-74</text>
+                    <rect x="1586" y="477" class="house" data-blok="C-75" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1602" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-75</text>
+                    <rect x="1614" y="477" class="house" data-blok="C-76" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1630" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-76</text>
+                    <rect x="1642" y="477" class="house" data-blok="C-77" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1658" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-77</text>
+                    <rect x="1670" y="477" class="house" data-blok="C-78" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1686" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-78</text>
+                    <rect x="1698" y="477" class="house" data-blok="C-79" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1714" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-79</text>
+                    <rect x="1726" y="477" class="house" data-blok="C-80" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1742" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-80</text>
+                    <rect x="1754" y="477" class="house" data-blok="C-81" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1770" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-81</text>
+                    <rect x="1782" y="477" class="house" data-blok="C-82" data-status="Kosong" data-kredit="Belum Lunas" width="28" height="52" fill="white" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1798" y="491" font-size="10" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 560, 238)">C-82</text>
+
+                    <text x="1170" y="315" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(3, 1228, 320)">ROW 4</text>
+                    <text x="1000" y="450" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(3, 1228, 320)">ROW 4</text>
+                    <text x="1440" y="385" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(3, 1228, 320)">FASUM</text>
+                    <text x="1440" y="505" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(3, 1228, 320)">FASUM</text>
+                    <text x="1850" y="305" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(3, 1228, 320)">ROW 4</text>
+                    <text x="1850" y="445" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(3, 1228, 320)">ROW 4</text>
+                    <text x="1650" y="572" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(3, 1228, 320)">ROW 4</text>
+                    <text x="2010" y="249" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(0, 1950, 250)">Parit</text>
+                    <text x="1860" y="213" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(80, 1850, 220)">Parit</text>
+                    <text x="2240" y="575" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-50, 2220, 579)">Parit.-</text>
+                    <text x="360" y="350" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(4, 400, 340)">KSB</text>
+                    <text x="400" y="217" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-80, 400, 340)">Jalan Desa</text>
+                    <text x="770" y="560" font-size="16" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-65, 770, 550)">Jalan.-</text>
+
+
+
+                    <rect x="546" y="295" class="house" data-blok="-" data-status="Sold Out" data-kredit="Lunas" width="870" height="102" fill="gray" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <rect x="546" y="430" class="house" data-blok="-" data-status="Sold Out" data-kredit="Lunas" width="870" height="70" fill="gray" stroke="black" stroke-width="1.5" transform="rotate(3, 536, 210)"></rect>
+                    <text x="1100" y="424" font-size="40" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-30, 1140, 374)">SOLD OUT</text>
+                    <text x="730" y="184" font-size="40" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="black" transform="rotate(-30, 1140, 374)">SOLD OUT</text>
+                    <rect x="426" y="255" class="house" data-blok="-" data-status="Sold Out" data-kredit="Lunas" width="75" height="60" fill="gray" stroke="black" stroke-width="1.5" transform="rotate(4, 536, 210)"></rect>
+
+                </svg>
+               
+            </div>
+            <div style="margin-top: 550px; text-align: left; margin-left: 50px;">
+                <h3>Keterangan:</h3>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 30px; height: 30px; background-color: yellow; border: 2px solid black;"></div>
+                        <span style="margin-left: 10px;">Rumah Kosong</span>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 30px; height: 30px; background-color: green; border: 2px solid black;"></div>
+                        <span style="margin-left: 10px;">Rumah Terisi</span>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 30px; height: 30px; background-color: blue; border: 2px solid black;"></div>
+                        <span style="margin-left: 10px;">Rumah Sudah Cash</span>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 30px; height: 30px; background-color: gray; border: 2px solid black;"></div>
+                        <span style="margin-left: 10px;">Sudah Habis Terjual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pop-up Overlay -->
+    <div class="overlay"></div>
+    <!-- Pop-up Box -->
+    <div class="popup">
+        <span class="popup-close">&times;</span>
+        <div class="popup-header">Informasi Rumah</div>
+        <div id="popup-content" class="popup-content"></div>
+    </div>
+
+    <script>
+        // JavaScript untuk menangani klik pada setiap kotak
+        document.querySelectorAll('.house').forEach(function (element) {
+            element.addEventListener('click', function () {
+                var blok = this.getAttribute('data-blok');
+                var status = this.getAttribute('data-status');
+                var kredit = this.getAttribute('data-kredit');
+                
+                document.getElementById('popup-content').innerHTML = 
+                    '<p>Nama Blok: ' + blok + '</p>' +
+                    '<p>Status Rumah: ' + status + '</p>' +
+                    '<p>Status Kredit: ' + kredit + '</p>';
+
+                // Menampilkan overlay dan pop-up
+                document.querySelector('.overlay').style.display = 'block';
+                document.querySelector('.popup').style.display = 'block';
+            });
+        });
+
+        // Menangani penutupan pop-up
+        document.querySelector('.popup-close').addEventListener('click', function () {
+            document.querySelector('.overlay').style.display = 'none';
+            document.querySelector('.popup').style.display = 'none';
+        });
+
+        // Menutup pop-up ketika overlay diklik
+        document.querySelector('.overlay').addEventListener('click', function () {
+            this.style.display = 'none';
+            document.querySelector('.popup').style.display = 'none';
+       });
+   </script>
+    </body>
+</html>
